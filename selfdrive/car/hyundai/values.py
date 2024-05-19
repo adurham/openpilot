@@ -175,6 +175,11 @@ class CAR(Platforms):
     CarSpecs(mass=3017 * CV.LB_TO_KG, wheelbase=2.72, steerRatio=12.9, tireStiffnessFactor=0.65),
     flags=HyundaiFlags.CHECKSUM_CRC8 | HyundaiFlags.HYBRID,
   )
+  HYUNDAI_ELANTRA_N_2022 = HyundaiPlatformConfig(
+    [HyundaiCarDocs("Hyundai Elantra N 2022", "No Smart Cruise Control (SCC)", car_parts=CarParts.common([CarHarness.hyundai_k]))],
+    CarSpecs(mass=3296 * CV.LB_TO_KG, wheelbase=2.72, steerRatio=12.2, tireStiffnessFactor=0.65),
+    flags=HyundaiFlags.CHECKSUM_CRC8,
+  )
   HYUNDAI_GENESIS = HyundaiPlatformConfig(
     [
       # TODO: check 2015 packages
@@ -702,7 +707,7 @@ FW_QUERY_CONFIG = FwQueryConfig(
   # We lose these ECUs without the comma power on these cars.
   # Note that we still attempt to match with them when they are present
   non_essential_ecus={
-    Ecu.abs: [CAR.HYUNDAI_PALISADE, CAR.HYUNDAI_SONATA, CAR.HYUNDAI_SANTA_FE_2022, CAR.KIA_K5_2021, CAR.HYUNDAI_ELANTRA_2021,
+    Ecu.abs: [CAR.HYUNDAI_PALISADE, CAR.HYUNDAI_SONATA, CAR.HYUNDAI_SANTA_FE_2022, CAR.KIA_K5_2021, CAR.HYUNDAI_ELANTRA_2021, CAR.HYUNDAI_ELANTRA_N_2022,
               CAR.HYUNDAI_SANTA_FE, CAR.HYUNDAI_KONA_EV_2022, CAR.HYUNDAI_KONA_EV, CAR.HYUNDAI_CUSTIN_1ST_GEN, CAR.KIA_SORENTO,
               CAR.KIA_CEED, CAR.KIA_SELTOS],
   },
